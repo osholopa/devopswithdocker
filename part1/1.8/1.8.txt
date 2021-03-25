@@ -1,0 +1,3 @@
+λ docker build . -t curler
+
+λ docker run -it curler
