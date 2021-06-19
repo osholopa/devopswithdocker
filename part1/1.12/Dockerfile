@@ -1,0 +1,10 @@
+FROM node:14-alpine
+WORKDIR /app
+EXPOSE 5000
+COPY package.json ./
+COPY package-lock.json ./
+RUN npm install --silent
+COPY . ./
+RUN npm run build
+RUN npm install -g serve
+CMD ["serve",  "-s", "-l", "5000", "build"]
