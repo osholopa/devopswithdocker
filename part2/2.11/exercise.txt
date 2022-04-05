@@ -1,0 +1,4 @@
+I have a full-stack project that consists of React frontend, C# backend and a postgresql database with adminer as an ui for database management.
+I dockerized all services to their own containers and have made a supporting docker-compose file for running things simultaneously.
+Database username/password is given to the container via docker secrets and client is communicating to the api through a different
+network than api and the database.
