@@ -1,0 +1,13 @@
+FROM golang:alpine
+WORKDIR /app
+COPY . .
+RUN go build
+EXPOSE 8080
+ENV PORT=8080
+ENV REQUEST_ORIGIN=http://localhost:5000
+
+RUN addgroup -g 1001 backend
+RUN adduser -u 1001 -G backend -h /home/username -D backend
+RUN chown -R backend:backend ./
+
+CMD ["./server"]
