@@ -13,4 +13,6 @@ RUN addgroup -g 1001 frontend
 RUN adduser -u 1001 -G frontend -h /home/username -D frontend
 RUN chown -R frontend:frontend build
 
+USER frontend
+
 CMD ["serve",  "-s", "-l", "5000", "build"]
